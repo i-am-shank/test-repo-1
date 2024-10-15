@@ -28,12 +28,17 @@ int main() {
 			ans += str[i];
 		}
 	}
+
+	// conversion to Camel case ------------
+
+	// 1st converting 1st character
 	if(ans.size() > 0) {
 		if(ans[0]>='a' && ans[0]<='z') {
 			// convert to capital
 			ans[0] = ('A' + (ans[0]-'a'));
 		}
 	}
+	// Then converting starting character of all words
 	for(int i=1; i<(n-1); i++) {
 		if(ans[i]==' '  &&  (ans[i+1]>='a' && ans[i+1]<='z')) {
 			// (i+1) is the starting index of next word
