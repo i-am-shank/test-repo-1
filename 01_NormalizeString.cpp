@@ -28,6 +28,18 @@ int main() {
 			ans += str[i];
 		}
 	}
+	if(ans.size() > 0) {
+		if(ans[0]>='a' && ans[0]<='z') {
+			// convert to capital
+			ans[0] = ('A' + (ans[0]-'a'));
+		}
+	}
+	for(int i=1; i<(n-1); i++) {
+		if(ans[i]==' '  &&  (ans[i+1]>='a' && ans[i+1]<='z')) {
+			// (i+1) is the starting index of next word
+			ans[i+1] = ('A' + (ans[i+1]-'a'));
+		}
+	}
 	cout << ans << "\n";
 	return 0;
 }
